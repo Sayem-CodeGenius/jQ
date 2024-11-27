@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Sen:wght@400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Sen:wght@400..800&display=swap');
+
+:root {
+    --custom-typeface: 'Lato', 'Inter', 'Sen';
+    --font-family: "Inter", sans-serif;
+    --second-family: "Sen", sans-serif;
+    --third-family: "Roboto", sans-serif;
+    --brand-primary: #121212;
+    --brand-secondary: #1b1b1b;
+    --font-color: #fff;
+    --font-gradient: linear-gradient(110deg, #984300 0%, #fd6f00 46.35%, #ca5900 100%);
+    --brand-btn: #FD6F00;
+    --btn-shadow: 0px 0px 0px #FD6F00;
+    --btn-hover: 0px 0px 30px #FD6F00;
+    --card-overlay:  rgba(252, 109, 0, 0.5);
+}
+
+.moodShift {
+    --brand-primary: rgb(190, 218, 219);
+    --brand-secondary: #ecf0f1;
+    --font-color: #000000;
+    --brand-btn: #3498db;
+    --font-gradient: linear-gradient(110deg, #1f160f 0%, #161413 46.35%, #000000 100%);
+    --btn-shadow: 0px 0px 0px #3498db;
+    --btn-hover: 0px 0px 30px #3498db;
+    --card-overlay: rgba(52, 152, 219, 0.5);
+}
+
+
+/* CSS COMMON START */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: 0;
+    font-family: var(--font-family);
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--brand-primary);
+    transition: background-color 0.25s, color 0.25s;
+}
+
+.container {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+    background-color: transparent;
+    box-sizing: border-box;
+}
+
+
+
+html,
+body {
+    /* cursor: none; */
+}
+
+ul,
+ol {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.button {
+    background: var(--brand-btn);
+    padding: 12px 32px;
+    border-radius: 15px;
+    font-family: var(--second-family);
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    display: inline-block;
+    color: var(--font-color);
+    transition: all 0.3s ease;
+    box-shadow: var(--btn-shadow);
+}
+
+.button:hover {
+    transform: scale(1.05);
+    box-shadow: var(--btn-hover);
+}
+
+/* CSS COMMON END */
+
+/* NavBar Begins */
+nav {
+    background-color: var(--brand-primary);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+
+nav .logoImg a img {
+    width: 60px;
+}
+
+nav .collapse #menuBar li a {
+    font-weight: 500;
+    padding: 30px 25px;
+    font-size: 16px;
+    color: var(--font-color);
+}
+
+nav .collapse #menuBar li a:hover {
+    color: var(--brand-btn);
+}
+
+
+.search_box {
+    position: relative;
+    width: 400px;
+}
+
+.search_box input {
+    width: 400px;
+    height: 50px;
+    border: 1px;
+    outline: none;
+    border-radius: 15px;
+    padding: 10px;
+    font-family: poppins;
+    font-weight: 500;
+    font-size: 13px;
+    color: var(--brand-primary);
+}
+
+.search-line {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--brand-primary);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: var(--font-color);
+    border-radius: 8px;
+    border: none;
+}
+
+nav .moodBtn {
+    background-color: var(--brand-primary);
+    border: none;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+nav .moodBtn span {
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 40px;
+}
+
+nav .moodBtn span.sunIcon {
+    transition: 0.3s;
+    color: var(--font-color);
+}
+
+.moodShift .moodBtn span.sunIcon {
+    margin-top: -40px;
+}
+
+nav .moodBtn span.moonIcon {
+    background-color: var(--brand-primary);
+    color: var(--font-color);
+}
+
+/* Navbar Fixed Begins */
+.fixed{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);
+    animation-name: navbarFixed;
+    animation-duration: 0.5s; 
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+}
+
+@keyframes navbarFixed {
+    0% {
+        transform: translateY(-100%);
+    }
+    100%{
+        transform: translateY(0%);
+    }
+}
+/* Navbar Fixed Ends */
+
+/* NavBar Ends */
+p{
+    font-size: 20px;
+    color: var(--font-color);
+}
+/* PreLoader Begins */
+
+#preLoader{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    background-color: var(--brand-primary);
+  }
+  
+  #preLoader img {
+    max-width: 50%;
+  }
+  
+  /* PreLoader Ends */
+
+  /* Upward Arrow Begins */
+  #upward{
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    color: var(--brand-btn);
+    font-size: 40px;
+    background-color: transparent;
+    border: none;
+
+  }
